@@ -5,11 +5,13 @@ import Home from './pages/Home';
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Profile from './pages/Profile';
+import Header from './components/Header';
 
 export default function App() {
   return (
-    <h1 className='text-red-500'>
+  
       <BrowserRouter>
+      <Header />
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/About" element={<About />} />
@@ -18,6 +20,6 @@ export default function App() {
             <Route path="/Profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
-    </h1>
+  
   )
 }
