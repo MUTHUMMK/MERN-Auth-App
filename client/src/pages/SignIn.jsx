@@ -1,5 +1,6 @@
 import { Link , useNavigate } from "react-router-dom";
 import { useState } from 'react'
+import  OAuth  from "../components/OAuth.jsx"
 
 function SignIn() {
 
@@ -30,7 +31,7 @@ function SignIn() {
         setError(true)
         return;
       }
-      navigate('/')
+      navigate('/');
     } catch (error) {
       setLoading(false)
       setError(true)
@@ -45,6 +46,7 @@ function SignIn() {
         <input type="email" placeholder='Email' id='email' className='bg-slate-200 p-3 rounded-lg text-black'onChange={handleChange}  />
         <input type="password" placeholder='Password' id='password' className='bg-slate-200 p-3 rounded-lg text-black' onChange={handleChange}  />
         <button disabled={loading} className='uppercase rounded-lg bg-red-800 text-white p-2 hover:opacity-80 disabled:opacity-95'>{loading ? 'Loading...' : 'Sign-In'}</button>
+        <OAuth />
       </form>
       <div className='text-center gap-3'>
         <p>Don't Have an Account?</p>
